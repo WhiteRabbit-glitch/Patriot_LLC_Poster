@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Patriot Enterprises – AI Proposal Generation – Capstone Poster</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
+
+/*
+  PRINT EXPORT:
+  1. Open in Chrome
+  2. Ctrl+P / Cmd+P → Save as PDF
+  3. Paper: Custom → 48 wide × 36 tall (inches)
+  4. Margins: None  |  Scale: 100%  |  Background graphics: ON
+*/
+
+:root {
+  --navy:     #1B2D4F;
+  --red:      #B2171F;
+  --white:    #FFFFFF;
+  --offwhite: #F2F0EC;
+  --light:    #E0DDD8;
+  --mid:      #8A8A8A;
+  --text:     #1A1818;
+  --textmid:  #3D3A38;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html, body {
+  width: 1800px;
+  height: 1350px;
+  background: var(--offwhite);
+  font-family: 'Source Sans 3', sans-serif;
+  color: var(--text);
+  overflow: hidden;
+}
+
+.poster { width:1800px; height:1350px; display:flex; flex-direction:column; }
+
+/* ── HEADER ── */
+.header {
+  background: var(--navy);
+  display: flex;
+  align-items: stretch;
+  flex-shrink: 0;
+  border-bottom: 5px solid var(--red);
+}
+.flag-col {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.flag-blue {
+  background: var(--navy);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid rgba(255,255,255,0.1);
+}
+.flag-stripes { display:flex; flex-direction:column; }
+.fs { height: 10px; }
+.fs.r { background: var(--red); }
+.fs.w { background: white; }
+
+.hdr-main { flex:1; padding: 13px 22px 10px; }
+.hdr-eyebrow {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  margin-bottom: 3px;
+}
+.hdr-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 37px;
+  font-weight: 700;
+  color: white;
+  line-height: 1.05;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.hdr-title .red { color: var(--red); }
+.hdr-sub { font-size: 12.5px; color: rgba(255,255,255,0.6); margin-top: 5px; }
+.hdr-authors { font-size: 11px; color: rgba(255,255,255,0.42); margin-top: 3px; }
+
+.hdr-right {
+  width: 185px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 10px 14px;
+  border-left: 1px solid rgba(255,255,255,0.1);
+}
+.asu-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.25;
+}
+.asu-sub { font-size: 9px; color: rgba(255,255,255,0.42); text-align: center; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* ── BODY ── */
+.body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  overflow: hidden;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 13px;
+  gap: 9px;
+  border-right: 1px solid var(--light);
+  overflow: hidden;
+}
+.col:last-child { border-right: none; }
+
+/* ── SECTION HEAD ── */
+.sh {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 5px 9px;
+  color: white;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+}
+.sh.red { background: var(--red); }
+.sh.outline { background: white; color: var(--navy); border: 1.5px solid var(--navy); }
+
+/* ── TEXT ── */
+.bt { font-size: 11.5px; line-height: 1.52; color: var(--textmid); flex-shrink: 0; }
+.bt strong { color: var(--navy); font-weight: 700; }
+.mt5 { margin-top: 5px; }
+
+/* ── DIVIDER ── */
+.dv { height: 1px; background: var(--light); flex-shrink: 0; }
+
+/* ── STAT ROW ── */
+.stat-row { display:flex; gap:7px; flex-shrink:0; }
+.sb {
+  flex: 1;
+  background: var(--navy);
+  padding: 8px 5px;
+  text-align: center;
+}
+.sb.r { background: var(--red); }
+.sb.o { background: white; border: 2px solid var(--navy); }
+.sn {
+  font-family: 'Oswald', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+}
+.sb.o .sn { color: var(--navy); }
+.sl { font-size: 9.5px; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.4px; margin-top: 2px; line-height: 1.3; }
+.sb.o .sl { color: var(--navy); opacity: 0.65; }
+
+/* ── PIPELINE ── */
+.pipeline { display:flex; flex-direction:column; gap:3px; flex-shrink:0; }
+.pr { display:flex; align-items:stretch; }
+.pn {
+  width: 22px;
+  background: var(--red);
+  font-family: 'Oswald', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.pc {
+  flex: 1;
+  background: white;
+  border: 1px solid var(--light);
+  border-left: none;
+  padding: 4px 7px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.pl {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  flex: 1;
+}
+.pd { font-size: 10px; color: var(--mid); line-height: 1.3; flex: 2; }
+.pg {
+  font-size: 9px;
+  background: var(--navy);
+  color: white;
+  padding: 2px 5px;
+  white-space: nowrap;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+.pg.r { background: var(--red); }
+.parrow { padding-left: 9px; opacity: 0.35; line-height: 1; font-size: 11px; color: var(--navy); }
+
+/* ── CHART WRAP ── */
+.cw {
+  background: white;
+  border: 1px solid var(--light);
+  padding: 9px 8px 6px;
+  flex-shrink: 0;
+}
+.ct {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+.cn { font-size: 9px; color: var(--mid); text-align: center; margin-top: 4px; font-style: italic; }
+
+/* ── BLIST ── */
+.bl { list-style:none; display:flex; flex-direction:column; gap:4px; flex-shrink:0; }
+.bl li { font-size: 11px; color: var(--textmid); line-height: 1.45; padding-left: 14px; position: relative; }
+.bl li::before { content:''; position:absolute; left:0; top:6px; width:6px; height:6px; background:var(--red); transform:rotate(45deg); }
+.bl li strong { color: var(--navy); }
+
+/* ── TABLE ── */
+.tbl { width:100%; border-collapse:collapse; font-size:10.5px; }
+.tbl th { background:var(--navy); color:white; font-family:'Oswald',sans-serif; font-size:10.5px; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; padding:4px 7px; text-align:left; }
+.tbl th.r { background:var(--red); }
+.tbl td { padding:3px 7px; border-bottom:1px solid var(--light); color:var(--textmid); vertical-align:top; }
+.tbl tr:last-child td { border-bottom:none; }
+.tbl tr:nth-child(even) td { background:rgba(27,45,79,0.03); }
+.tbl td.b { font-weight:700; color:var(--navy); }
+
+/* ── REF LIST ── */
+.rl { list-style:none; display:flex; flex-direction:column; gap:3px; }
+.rl li { font-size:9px; color:var(--mid); line-height:1.4; padding-left:18px; position:relative; }
+.rl li::before { content:'[' attr(data-n) ']'; position:absolute; left:0; font-weight:700; color:var(--navy); font-size:9px; }
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--navy);
+  border-top: 3px solid var(--red);
+  padding: 7px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+.ft { font-size:10px; color:rgba(255,255,255,0.5); line-height:1.6; }
+.ft strong { color:rgba(255,255,255,0.82); }
+.fc { font-family:'Oswald',sans-serif; font-size:11px; font-weight:600; color:white; text-align:center; text-transform:uppercase; letter-spacing:1px; }
+</style>
+</head>
+<body>
+<div class="poster">
+
+<!-- ═══ HEADER ═══ -->
+<div class="header">
+  <div class="flag-col">
+    <div class="flag-blue">
+      <svg width="54" height="42" viewBox="0 0 54 42" fill="none">
+        <text x="5"  y="13" fill="white" font-size="11" font-family="serif">★</text>
+        <text x="20" y="13" fill="white" font-size="11" font-family="serif">★</text>
+        <text x="35" y="13" fill="white" font-size="11" font-family="serif">★</text>
+        <text x="5"  y="27" fill="white" font-size="11" font-family="serif">★</text>
+        <text x="20" y="27" fill="white" font-size="11" font-family="serif">★</text>
+        <text x="35" y="27" fill="white" font-size="11" font-family="serif">★</text>
+        <text x="5"  y="41" fill="white" font-size="11" font-family="serif">★</text>
+        <text x="20" y="41" fill="white" font-size="11" font-family="serif">★</text>
+        <text x="35" y="41" fill="white" font-size="11" font-family="serif">★</text>
+      </svg>
+    </div>
+    <div class="flag-stripes">
+      <div class="fs r"></div><div class="fs w"></div>
+      <div class="fs r"></div><div class="fs w"></div>
+      <div class="fs r"></div><div class="fs w"></div>
+      <div class="fs r"></div>
+    </div>
+  </div>
+
+  <div class="hdr-main">
+    <div class="hdr-eyebrow">CIS576 AI in Business Capstone · Patriot Enterprises LLC · Spring 2026</div>
+    <div class="hdr-title">AI-<span class="red">Assisted</span> Proposal Generation for Federal Government Contracting</div>
+    <div class="hdr-sub">A human-validated Retrieval-Augmented Generation pipeline to increase proposal capacity and competitive performance in the federal GovCon market</div>
+    <div class="hdr-authors">Chandra Carr &nbsp;·&nbsp; Chris Applewhite &nbsp;·&nbsp; Aryanna Golabi &nbsp;·&nbsp; Nalin Lee &nbsp;&nbsp;|&nbsp;&nbsp; Faculty Advisor: Dr. Lu Xiao &nbsp;&nbsp;|&nbsp;&nbsp; SME: Marc (Technical Architecture)</div>
+  </div>
+
+  <div class="hdr-right">
+    <svg width="68" height="68" viewBox="0 0 68 68" fill="none">
+      <rect x="4" y="54" width="60" height="10" fill="#B2171F"/>
+      <rect x="8" y="47" width="52" height="8" fill="white" opacity="0.88"/>
+      <rect x="12" y="41" width="44" height="7" fill="white" opacity="0.82"/>
+      <rect x="12" y="41" width="3" height="7" fill="#1B2D4F"/>
+      <rect x="19" y="41" width="3" height="7" fill="#1B2D4F"/>
+      <rect x="26" y="41" width="3" height="7" fill="#1B2D4F"/>
+      <rect x="33" y="41" width="3" height="7" fill="#1B2D4F"/>
+      <rect x="40" y="41" width="3" height="7" fill="#1B2D4F"/>
+      <rect x="47" y="41" width="3" height="7" fill="#1B2D4F"/>
+      <rect x="22" y="30" width="24" height="12" fill="white" opacity="0.78"/>
+      <rect x="22" y="30" width="3" height="12" fill="#1B2D4F"/>
+      <rect x="29" y="30" width="3" height="12" fill="#1B2D4F"/>
+      <rect x="36" y="30" width="3" height="12" fill="#1B2D4F"/>
+      <rect x="43" y="30" width="3" height="12" fill="#1B2D4F"/>
+      <ellipse cx="34" cy="28" rx="12" ry="14" fill="white" opacity="0.88"/>
+      <ellipse cx="34" cy="26" rx="7" ry="8" fill="#B2171F" opacity="0.65"/>
+      <rect x="32" y="12" width="4" height="10" rx="1" fill="white"/>
+      <rect x="34" y="3" width="1.5" height="10" fill="white"/>
+      <rect x="35.5" y="3" width="10" height="6" fill="#B2171F"/>
+      <rect x="35.5" y="5" width="10" height="2" fill="white"/>
+    </svg>
+    <div class="asu-name">Arizona State<br>University</div>
+    <div class="asu-sub">MS AI in Business</div>
+  </div>
+</div>
+
+<!-- ═══ BODY ═══ -->
+<div class="body">
+
+<!-- ─── COL 1 ─── -->
+<div class="col">
+
+  <div class="sh">
+    <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="1" width="11" height="11" rx="1" stroke="white" stroke-width="1.2" fill="none"/><line x1="3" y1="4.5" x2="10" y2="4.5" stroke="white" stroke-width="1"/><line x1="3" y1="7" x2="10" y2="7" stroke="white" stroke-width="1"/><line x1="3" y1="9.5" x2="7" y2="9.5" stroke="white" stroke-width="1"/></svg>
+    Abstract
+  </div>
+  <p class="bt">Patriot Enterprises LLC, a mid-tier federal GovCon providing professional services, IT support, and management consulting, produces proposals manually at approximately <strong>8 per month</strong> with a <strong>20% win rate</strong>. This project designs and prototypes an AI-assisted proposal generation system using a Retrieval-Augmented Generation (RAG) architecture [2,3]. The system automates the most time-intensive early proposal stages — compliant outline construction, win theme development, and first-draft narrative — while preserving mandatory human decision authority at every step. Projected outcomes include a <strong>30–40% reduction in proposal drafting time</strong>, capacity for additional bid volume without headcount expansion, and a projected win rate improvement to 25%+. The prototype is built on FAISS vector search, local embeddings via llama.cpp, and Claude hosted on Amazon Bedrock via Amazon GovCloud, routed through LiteLLM for compliance.</p>
+
+  <div class="dv"></div>
+
+  <div class="sh">
+    <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5.5" stroke="white" stroke-width="1.2" fill="none"/><line x1="6.5" y1="4.5" x2="6.5" y2="7" stroke="white" stroke-width="1.3" stroke-linecap="round"/><circle cx="6.5" cy="9.5" r="0.7" fill="white"/></svg>
+    Introduction
+  </div>
+  <p class="bt">The federal government obligates <strong>~$744.7 billion annually</strong> in contracts governed by FAR and agency supplements including DFARS [1]. For GovCon firms, proposals are the sole mechanism for new revenue — yet the development process is expensive, regulated, and heavily dependent on skilled writer time.</p>
+  <p class="bt mt5">Patriot faces a structural capacity constraint. With a 20% win rate and 8 proposals per month, every additional proposal requires either overtime from existing staff or a reduction in quality. Proposal writers spend the majority of their time on formatting, compliance matrices, and boilerplate narrative — tasks with low strategic value — leaving insufficient capacity for competitive differentiation and win theme development.</p>
+  <p class="bt mt5">Research links proposal quality directly to award probability, and AI-assisted first-draft generation has been shown to reduce cognitive load and free writer attention for high-value activities [2,4]. This project applies RAG-based generation — the leading approach for knowledge-intensive document production [3] — to Patriot's specific institutional context.</p>
+
+  <div class="dv"></div>
+
+  <div class="stat-row">
+    <div class="sb">
+      <div class="sn">$744B</div>
+      <div class="sl">Federal market annually [1]</div>
+    </div>
+    <div class="sb r">
+      <div class="sn">20%</div>
+      <div class="sl">Patriot baseline win rate</div>
+    </div>
+    <div class="sb o">
+      <div class="sn">8/mo</div>
+      <div class="sl">Current proposal volume</div>
+    </div>
+  </div>
+
+  <div class="dv"></div>
+
+  <div class="sh red">
+    <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><polyline points="2,7 5,10 11,3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+    Conclusions
+  </div>
+  <ul class="bl">
+    <li><strong>Volume is the primary lever.</strong> More proposals at a constant win rate yields more wins mathematically. AI-assisted drafting removes the bottleneck without adding headcount.</li>
+    <li><strong>Proprietary knowledge is the differentiator.</strong> Patriot's past performance, CO relationships, and competitive intelligence — indexed in the vector store — cannot be replicated by competitors adopting generic AI tools.</li>
+    <li><strong>Human oversight is architecture, not policy.</strong> Review gates are hard-wired into the pipeline. No output advances without sign-off. This directly addresses leadership's concern about autonomous AI errors in a legally-exposed, FAR-regulated environment.</li>
+    <li><strong>Build over buy.</strong> Custom RAG pipeline reaches working prototype in ~1 week. Enterprise platform integrations require 2–3 months and still lack Patriot-specific institutional context.</li>
+    <li><strong>Future work:</strong> Production FAISS deployment, chunking strategy optimization, CO preference learning, evaluator feedback integration. Step 4 (mock SSB review) remains an open ethical question, intentionally excluded from current scope.</li>
+  </ul>
+
+  <div class="dv" style="margin-top:auto;"></div>
+  <div class="sh outline" style="font-size:11px;">References</div>
+  <ul class="rl">
+    <li data-n="1">USASpending.gov (2024). <em>Federal Procurement Data System.</em> U.S. General Services Administration.</li>
+    <li data-n="2">Lewis, P. et al. (2020). Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. <em>NeurIPS 2020.</em></li>
+    <li data-n="3">Gao, Y. et al. (2023). Retrieval-Augmented Generation for LLMs: A Survey. <em>arXiv:2312.10997.</em></li>
+    <li data-n="4">Siricharoen, W. (2023). Using Generative AI Tools in Proposal Writing. <em>Intl. J. Advanced Computer Science.</em></li>
+    <li data-n="5">Anthropic (2024). <em>Claude Model Card.</em> Anthropic PBC.</li>
+  </ul>
+
+</div><!-- /col1 -->
+
+<!-- ─── COL 2 ─── -->
+<div class="col">
+
+  <div class="sh">
+    <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="5" width="11" height="2" rx="1" fill="white"/><rect x="3" y="2" width="2" height="9" rx="1" fill="white"/><rect x="8" y="2" width="2" height="9" rx="1" fill="white"/></svg>
+    Methods &amp; Materials
+  </div>
+
+  <p class="bt">The system implements a <strong>three-stage RAG pipeline</strong> targeting the highest-labor phases of Patriot's proposal cycle. All AI outputs require human review and approval before advancing. Agentic autonomous flows are explicitly excluded at the architecture level — leadership identified unreviewed AI output as unacceptable risk in FAR-regulated procurement [5].</p>
+
+  <div class="pipeline">
+    <div class="pr">
+      <div class="pn">1</div>
+      <div class="pc">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="1" stroke="#1B2D4F" stroke-width="1.2" fill="none"/><line x1="4" y1="6" x2="12" y2="6" stroke="#1B2D4F" stroke-width="1"/><line x1="4" y1="9" x2="9" y2="9" stroke="#1B2D4F" stroke-width="1"/></svg>
+        <div class="pl">Compliant Outline Generation</div>
+        <div class="pd">Ingests RFP / Section L–M → structured outline + compliance matrix</div>
+        <span class="pg">Human Review</span>
+      </div>
+    </div>
+    <div class="parrow">▼</div>
+    <div class="pr">
+      <div class="pn">2</div>
+      <div class="pc">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" stroke="#1B2D4F" stroke-width="1.2" fill="none"/><line x1="8" y1="4" x2="8" y2="8" stroke="#1B2D4F" stroke-width="1.2" stroke-linecap="round"/><circle cx="8" cy="10.5" r="0.7" fill="#1B2D4F"/></svg>
+        <div class="pl">Win Theme Development</div>
+        <div class="pd">FAISS retrieves past performance, CO preferences, competitive intel → themes drafted</div>
+        <span class="pg">Human Review</span>
+      </div>
+    </div>
+    <div class="parrow">▼</div>
+    <div class="pr">
+      <div class="pn">3</div>
+      <div class="pc">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" stroke="#1B2D4F" stroke-width="1.2" fill="none"/><circle cx="8" cy="8" r="2" fill="#1B2D4F"/></svg>
+        <div class="pl">Narrative Draft Generation</div>
+        <div class="pd">Claude (Bedrock) generates section prose scored against evaluator criteria [3,5]</div>
+        <span class="pg r">Human Review</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="bt" style="font-size:10.5px;"><strong>Technical stack:</strong> FAISS vector index · llama.cpp local embeddings · Claude via Amazon Bedrock · LiteLLM compliance proxy · FastAPI · Amazon GovCloud (FedRAMP). Knowledge sources: past proposals, RFPs, CO preferences, incumbent intelligence, Patriot certifications (ISO 9001, clearances).</p>
+
+  <div class="dv"></div>
+
+  <!-- STACKED BAR: Time allocation before/after -->
+  <div class="sh">
+    <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="7" width="3" height="5" fill="white"/><rect x="5" y="4.5" width="3" height="7.5" fill="white"/><rect x="9" y="2" width="3" height="10" fill="white"/></svg>
+    Writer Time Allocation — Manual vs. AI-Assisted (Projected)
+  </div>
+  <div class="cw">
+    <svg width="546" height="108" viewBox="0 0 546 108" font-family="'Source Sans 3',sans-serif">
+      <!-- Y labels -->
+      <text x="70" y="22" text-anchor="end" font-size="10" fill="#3D3A38" font-weight="600">Manual</text>
+      <text x="70" y="62" text-anchor="end" font-size="10" fill="#3D3A38" font-weight="600">AI-Assisted</text>
+
+      <!-- MANUAL BAR (total width 466px) -->
+      <!-- Formatting/Compliance 35% = 163px -->
+      <rect x="74" y="8" width="163" height="22" fill="#1B2D4F"/>
+      <text x="155" y="23" text-anchor="middle" font-size="9.5" fill="white" font-weight="600">35% Formatting</text>
+      <!-- Boilerplate 30% = 140px -->
+      <rect x="237" y="8" width="140" height="22" fill="#B2171F"/>
+      <text x="307" y="23" text-anchor="middle" font-size="9.5" fill="white" font-weight="600">30% Boilerplate</text>
+      <!-- Strategy 20% = 93px -->
+      <rect x="377" y="8" width="93" height="22" fill="#6B7280"/>
+      <text x="423" y="23" text-anchor="middle" font-size="9.5" fill="white" font-weight="600">20%</text>
+      <!-- Review 15% = 70px -->
+      <rect x="470" y="8" width="70" height="22" fill="#374151"/>
+      <text x="505" y="23" text-anchor="middle" font-size="9.5" fill="white" font-weight="600">15%</text>
+
+      <!-- AI-ASSISTED BAR (projected) -->
+      <!-- Formatting 10% = 47px -->
+      <rect x="74" y="48" width="47" height="22" fill="#1B2D4F"/>
+      <text x="97" y="63" text-anchor="middle" font-size="8.5" fill="white" font-weight="600">10%</text>
+      <!-- Boilerplate 10% = 47px -->
+      <rect x="121" y="48" width="47" height="22" fill="#B2171F"/>
+      <text x="144" y="63" text-anchor="middle" font-size="8.5" fill="white" font-weight="600">10%</text>
+      <!-- Strategy 50% = 233px — gains the freed time -->
+      <rect x="168" y="48" width="233" height="22" fill="#6B7280"/>
+      <text x="284" y="63" text-anchor="middle" font-size="9.5" fill="white" font-weight="600">50% Strategy &amp; Win Themes</text>
+      <!-- Review 30% = 140px -->
+      <rect x="401" y="48" width="139" height="22" fill="#374151"/>
+      <text x="470" y="63" text-anchor="middle" font-size="9.5" fill="white" font-weight="600">30% Review</text>
+
+      <!-- Legend row -->
+      <rect x="74" y="82" width="10" height="8" fill="#1B2D4F"/>
+      <text x="88" y="90" font-size="9" fill="#3D3A38">Formatting/Compliance</text>
+      <rect x="200" y="82" width="10" height="8" fill="#B2171F"/>
+      <text x="214" y="90" font-size="9" fill="#3D3A38">Boilerplate Narrative</text>
+      <rect x="310" y="82" width="10" height="8" fill="#6B7280"/>
+      <text x="324" y="90" font-size="9" fill="#3D3A38">Strategy / Win Themes</text>
+      <rect x="420" y="82" width="10" height="8" fill="#374151"/>
+      <text x="434" y="90" font-size="9" fill="#3D3A38">Review &amp; Polish</text>
+    </svg>
+    <div class="cn">Projected based on 30–40% drafting time reduction target. AI automation of formatting and boilerplate frees writer capacity for competitive strategy. Pilot validation required.</div>
+  </div>
+
+  <div class="dv"></div>
+
+  <!-- DISCUSSION -->
+  <div class="sh">
+    <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5.5" stroke="white" stroke-width="1.2" fill="none"/><path d="M4 5C4 3.5 9 3.5 9 5.5C9 7 6.5 7.5 6.5 9" stroke="white" stroke-width="1.2" stroke-linecap="round" fill="none"/><circle cx="6.5" cy="10.5" r="0.7" fill="white"/></svg>
+    Discussion
+  </div>
+  <p class="bt">The primary competitive advantage of this approach is Patriot's proprietary institutional knowledge. Generic AI tools — commercial platforms or off-the-shelf integrations — operate without access to Patriot's past performance, CO relationship data, or incumbent intelligence. The RAG architecture makes this knowledge retrievable at generation time, creating a capability that competitors cannot replicate simply by adopting the same tools [2,3].</p>
+  <p class="bt mt5">The deliberate exclusion of autonomous flows is a strategic choice, not a technical limitation. Every human review gate is an architecture-level control, not a soft guideline. This design reflects a calibrated position: maximize AI leverage on low-risk, high-effort tasks while maintaining human accountability on all outputs that carry legal or competitive exposure.</p>
+  <p class="bt mt5">The deskilling limitation — writers atrophying core skills through over-reliance on AI drafts — is the structurally weakest mitigation in the design. AI-off exercises lack enforcement mechanisms unlike all other pipeline controls. This gap is named explicitly rather than treated as a solved problem.</p>
+
+</div><!-- /col2 -->
+
+<!-- ─── COL 3 ─── -->
+<div class="col">
+
+  <div class="sh">
+    <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><polyline points="1.5,10 4.5,5.5 7.5,7.5 11.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+    Results (Projected — Prototype Stage, Untested)
+  </div>
+
+  <!-- BAR CHART: Volume + Financial Impact -->
+  <div class="cw">
+    <div class="ct">Proposal Volume &amp; Projected Financial Impact — Baseline vs. AI-Assisted</div>
+    <svg width="546" height="148" viewBox="0 0 546 148" font-family="'Source Sans 3',sans-serif">
+      <!-- Grid -->
+      <line x1="58" y1="10" x2="58" y2="108" stroke="#E0DDD8" stroke-width="1"/>
+      <line x1="58" y1="108" x2="530" y2="108" stroke="#E0DDD8" stroke-width="1"/>
+      <line x1="58" y1="75" x2="530" y2="75" stroke="#E0DDD8" stroke-width="0.5" stroke-dasharray="3,2"/>
+      <line x1="58" y1="42" x2="530" y2="42" stroke="#E0DDD8" stroke-width="0.5" stroke-dasharray="3,2"/>
+
+      <!-- Y axis labels -->
+      <text x="54" y="112" text-anchor="end" font-size="8.5" fill="#8A8A8A">0</text>
+      <text x="54" y="79" text-anchor="end" font-size="8.5" fill="#8A8A8A">4</text>
+      <text x="54" y="46" text-anchor="end" font-size="8.5" fill="#8A8A8A">8</text>
+      <text x="54" y="14" text-anchor="end" font-size="8.5" fill="#8A8A8A">12</text>
+
+      <!-- GROUP 1: Monthly proposals (scale 0-12, 98px height) -->
+      <!-- Current 8 → 65.3px from top = y 42.7 -->
+      <rect x="72" y="42.7" width="40" height="65.3" fill="#1B2D4F"/>
+      <text x="92" y="38" text-anchor="middle" font-size="10" fill="#1B2D4F" font-weight="700">8</text>
+      <!-- Target 10 → 81.7px from top = y 26.3 -->
+      <rect x="117" y="26.3" width="40" height="81.7" fill="#B2171F"/>
+      <text x="137" y="22" text-anchor="middle" font-size="10" fill="#B2171F" font-weight="700">10+</text>
+      <text x="105" y="122" text-anchor="middle" font-size="9" fill="#3D3A38">Proposals/Mo</text>
+
+      <!-- GROUP 2: Annual wins -->
+      <!-- Current 8 wins → 65.3 -->
+      <rect x="205" y="42.7" width="40" height="65.3" fill="#1B2D4F"/>
+      <text x="225" y="38" text-anchor="middle" font-size="10" fill="#1B2D4F" font-weight="700">8</text>
+      <!-- Target ~12 wins (25% of ~48/yr) → 98px -->
+      <rect x="250" y="10" width="40" height="98" fill="#B2171F"/>
+      <text x="270" y="6" text-anchor="middle" font-size="10" fill="#B2171F" font-weight="700">12</text>
+      <text x="238" y="122" text-anchor="middle" font-size="9" fill="#3D3A38">Annual Wins</text>
+
+      <!-- GROUP 3: Revenue $M (scale ÷10, so $40M = 4, $60M = 6) -->
+      <!-- $40M → bar = 4/12*98 = 32.7 → y 75.3 -->
+      <rect x="340" y="75.3" width="40" height="32.7" fill="#1B2D4F"/>
+      <text x="360" y="71" text-anchor="middle" font-size="10" fill="#1B2D4F" font-weight="700">$40M</text>
+      <!-- $60M → bar = 6/12*98 = 49 → y 59 -->
+      <rect x="385" y="59" width="40" height="49" fill="#B2171F"/>
+      <text x="405" y="55" text-anchor="middle" font-size="10" fill="#B2171F" font-weight="700">$60M</text>
+      <text x="373" y="122" text-anchor="middle" font-size="9" fill="#3D3A38">Annual Contract Value</text>
+
+      <!-- Legend -->
+      <rect x="62" y="132" width="10" height="8" fill="#1B2D4F"/>
+      <text x="76" y="140" font-size="9" fill="#3D3A38">Current Baseline (20% win rate)</text>
+      <rect x="230" y="132" width="10" height="8" fill="#B2171F"/>
+      <text x="244" y="140" font-size="9" fill="#3D3A38">Projected / AI-Assisted (25% win rate, $5M avg contract)</text>
+    </svg>
+    <div class="cn">Projected: 8 proposals/mo baseline · 20% current win rate · target 25% (+5pp) · $5M avg contract value [project docs]. All figures are estimates; pilot validation required before production deployment.</div>
+  </div>
+
+  <!-- OUTCOME TARGETS: 4-box visual -->
+  <div class="cw">
+    <div class="ct">Projected Outcome Targets</div>
+    <svg width="546" height="72" viewBox="0 0 546 72" font-family="'Source Sans 3',sans-serif">
+      <rect x="4"   y="6" width="128" height="58" fill="#1B2D4F"/>
+      <text x="68"  y="35" text-anchor="middle" font-size="20" fill="white" font-weight="700" font-family="'Oswald',sans-serif">30–40%</text>
+      <text x="68"  y="50" text-anchor="middle" font-size="9"  fill="rgba(255,255,255,0.72)">Draft Time Reduction</text>
+      <text x="68"  y="61" text-anchor="middle" font-size="8"  fill="rgba(255,255,255,0.45)">(target)</text>
+
+      <rect x="140" y="6" width="128" height="58" fill="#B2171F"/>
+      <text x="204" y="35" text-anchor="middle" font-size="20" fill="white" font-weight="700" font-family="'Oswald',sans-serif">25%+</text>
+      <text x="204" y="50" text-anchor="middle" font-size="9"  fill="rgba(255,255,255,0.72)">Win Rate Target</text>
+      <text x="204" y="61" text-anchor="middle" font-size="8"  fill="rgba(255,255,255,0.45)">(from 20% baseline)</text>
+
+      <rect x="276" y="6" width="128" height="58" fill="#1B2D4F"/>
+      <text x="340" y="35" text-anchor="middle" font-size="20" fill="white" font-weight="700" font-family="'Oswald',sans-serif">≥70%</text>
+      <text x="340" y="50" text-anchor="middle" font-size="9"  fill="rgba(255,255,255,0.72)">Draft Acceptance Rate</text>
+      <text x="340" y="61" text-anchor="middle" font-size="8"  fill="rgba(255,255,255,0.45)">(success threshold)</text>
+
+      <rect x="412" y="6" width="130" height="58" fill="#B2171F"/>
+      <text x="477" y="35" text-anchor="middle" font-size="20" fill="white" font-weight="700" font-family="'Oswald',sans-serif">Zero</text>
+      <text x="477" y="50" text-anchor="middle" font-size="9"  fill="rgba(255,255,255,0.72)">Critical Compliance</text>
+      <text x="477" y="61" text-anchor="middle" font-size="8"  fill="rgba(255,255,255,0.45)">Errors (target)</text>
+    </svg>
+    <div class="cn">Targets from project success criteria. Validation via: time tracking, expert draft review (n=20), SUS score ≥70, adoption intent ≥75%.</div>
+  </div>
+
+  <!-- VALIDATION TABLE -->
+  <div class="sh red">
+    <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L3 2.5V6C3 8.5 4.5 10.8 6.5 12C8.5 10.8 10 8.5 10 6V2.5L6.5 1Z" stroke="white" stroke-width="1.2" fill="none"/><polyline points="4,6.5 5.5,8 9,5" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+    Validation Plan
+  </div>
+  <table class="tbl">
+    <thead>
+      <tr>
+        <th>Metric</th>
+        <th class="r">Target</th>
+        <th>Method</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Retrieval precision (FAISS top-5)</td><td class="b">≥60% highly relevant</td><td>Manual evaluation, test queries</td></tr>
+      <tr><td>Hallucination rate</td><td class="b">Zero factual errors</td><td>Expert review, 20 generated drafts</td></tr>
+      <tr><td>Compliance detection</td><td class="b">100% critical errors caught</td><td>Controlled test with known errors</td></tr>
+      <tr><td>Draft time savings</td><td class="b">30%+ reduction</td><td>Time tracking during pilot</td></tr>
+      <tr><td>User acceptance (SUS)</td><td class="b">Score ≥70</td><td>Post-pilot survey</td></tr>
+      <tr><td>Adoption intent</td><td class="b">≥75% yes</td><td>Post-pilot survey + interviews</td></tr>
+    </tbody>
+  </table>
+
+  <!-- LIMITATIONS -->
+  <div class="sh outline" style="font-size:11.5px; margin-top:auto;">Known Limitations</div>
+  <ul class="bl">
+    <li><strong>Retrieval quality dependency</strong> — output quality degrades if the knowledge base is sparse or improperly chunked</li>
+    <li><strong>Hallucination risk</strong> — LLMs produce plausible but false claims; human review is non-negotiable, not optional</li>
+    <li><strong>Chunking sensitivity</strong> — segmentation strategy significantly affects retrieval relevance and section coherence</li>
+    <li><strong>Deskilling (design gap)</strong> — AI-off exercises lack enforcement; this is structurally weaker than all other architecture-level controls and is named explicitly</li>
+    <li><strong>Untested prototype</strong> — all outcome projections are estimates; pilot validation is required before production</li>
+  </ul>
+
+  <!-- LOGOS -->
+  <div style="display:flex; align-items:center; justify-content:center; gap:18px; margin-top:auto; padding-top:8px; border-top:1px solid var(--light);">
+    <img src="WPCarey.png" alt="W. P. Carey School of Business – ASU" style="height:48px; object-fit:contain;">
+    <img src="Screenshot 2026-04-19 153503.png" alt="Patriot Enterprises" style="height:48px; object-fit:contain;">
+  </div>
+
+</div><!-- /col3 -->
+</div><!-- /body -->
+
+<!-- ═══ FOOTER ═══ -->
+<div class="footer">
+  <div class="ft">
+    <strong>Patriot Enterprises LLC</strong> &nbsp;·&nbsp; Jed Owens, CEO &nbsp;·&nbsp; Brodie Thomson, Liaison<br>
+    Private GitHub Repository &nbsp;·&nbsp; Amazon GovCloud Infrastructure
+  </div>
+  <div class="fc">CIS576 AI in Business Capstone &nbsp;·&nbsp; Arizona State University &nbsp;·&nbsp; Spring 2026</div>
+  <div class="ft" style="text-align:right;">
+    <strong>Contact:</strong> Chandra Carr (Team Lead)<br>
+    Faculty Advisor: Dr. Lu Xiao &nbsp;·&nbsp; SME: Marc (Technical Architecture)
+  </div>
+</div>
+
+</div><!-- /poster -->
+</body>
+</html>

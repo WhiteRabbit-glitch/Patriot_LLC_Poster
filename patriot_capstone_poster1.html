@@ -36,7 +36,7 @@ html, body {
   overflow: hidden;
 }
 
-.poster { width:1800px; height:1200px; display:flex; flex-direction:column; }
+.poster { width:1800px; height:1200px; display:flex; flex-direction:column; overflow:hidden; }
 
 /* ── HEADER ── */
 .header {
@@ -259,9 +259,9 @@ html, body {
 .tbl td.b { font-weight:700; color:var(--navy); }
 
 /* ── REF LIST ── */
-.rl { list-style:none; display:flex; flex-direction:column; gap:3px; }
-.rl li { font-size:10.5px; color:var(--mid); line-height:1.45; padding-left:18px; position:relative; }
-.rl li::before { content:'[' attr(data-n) ']'; position:absolute; left:0; font-weight:700; color:var(--navy); font-size:10.5px; }
+.rl { list-style:none; display:flex; flex-direction:column; gap:1px; }
+.rl li { font-size:9.5px; color:var(--mid); line-height:1.4; padding-left:18px; position:relative; }
+.rl li::before { content:'[' attr(data-n) ']'; position:absolute; left:0; font-weight:700; color:var(--navy); font-size:9.5px; }
 
 /* ── FOOTER ── */
 .footer {
@@ -338,8 +338,6 @@ html, body {
   </div>
   <p class="bt">The federal government obligates <strong>~$744.7 billion annually</strong> in contracts governed by FAR and agency supplements including DFARS [1]. For GovCon firms, proposals are the sole mechanism for new revenue — yet the development process is expensive, regulated, and heavily dependent on skilled writer time.</p>
   <p class="bt mt5">Patriot faces a structural capacity constraint. With a 20% win rate and 8 proposals per month, every additional proposal requires either overtime from existing staff or a reduction in quality. Proposal writers spend the majority of their time on formatting, compliance matrices, and boilerplate narrative — tasks with low strategic value — leaving insufficient capacity for competitive differentiation and win theme development.</p>
-  <p class="bt mt5">Research links proposal quality directly to award probability, and AI-assisted first-draft generation has been shown to reduce cognitive load and free writer attention for high-value activities [2,4]. This project applies RAG-based generation — the leading approach for knowledge-intensive document production [3] — to Patriot's specific institutional context.</p>
-
   <div class="dv"></div>
 
   <div class="stat-row">
@@ -368,11 +366,11 @@ html, body {
     <li><strong>Proprietary knowledge is the differentiator.</strong> Patriot's past performance, CO relationships, and competitive intelligence — indexed in the vector store — cannot be replicated by competitors adopting generic AI tools.</li>
     <li><strong>Human oversight is architecture, not policy.</strong> Review gates are hard-wired into the pipeline. No output advances without sign-off. This directly addresses leadership's concern about autonomous AI errors in a legally-exposed, FAR-regulated environment.</li>
     <li><strong>Build over buy.</strong> Custom RAG pipeline reaches working prototype in ~1 week. Enterprise platform integrations require 2–3 months and still lack Patriot-specific institutional context.</li>
-    <li><strong>Future work:</strong> Production FAISS deployment, chunking strategy optimization, CO preference learning, evaluator feedback integration. Step 4 (mock SSB review) remains an open ethical question, intentionally excluded from current scope.</li>
+    <li><strong>Future work:</strong> Production FAISS deployment, chunking strategy optimization, CO preference learning, evaluator feedback integration.</li>
   </ul>
 
-  <div class="dv" style="margin-top:auto;"></div>
-  <div class="sh outline" style="font-size:11px;">References</div>
+  <div class="dv"></div>
+  <div class="sh" style="font-size:11px;">References</div>
   <ul class="rl">
     <li data-n="1">USASpending.gov (2024). <em>Federal Procurement Data System.</em> U.S. General Services Administration.</li>
     <li data-n="2">Lewis, P. et al. (2020). Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. <em>NeurIPS 2020.</em></li>
@@ -605,7 +603,7 @@ html, body {
   </table>
 
   <!-- LIMITATIONS -->
-  <div class="sh outline" style="font-size:11.5px; margin-top:auto;">Known Limitations</div>
+  <div class="sh outline" style="font-size:11.5px;">Known Limitations</div>
   <ul class="bl">
     <li><strong>Retrieval quality dependency</strong> — output quality degrades if the knowledge base is sparse or improperly chunked</li>
     <li><strong>Hallucination risk</strong> — LLMs produce plausible but false claims; human review is non-negotiable, not optional</li>
